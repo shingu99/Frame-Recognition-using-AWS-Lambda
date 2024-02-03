@@ -1,0 +1,17 @@
+Prerequisites:
+You need to have docker account, aws account, and aws cli installed
+Check if docker has been installed with the command: docker --version
+
+Docker commands==>
+login to docker: docker login
+list all the images: docker images
+build an image from docker file: docker build -t <name-tag> .
+aws ecr get-login-password --region us-east-1
+aws ecr --region us-east-1 | docker login -u AWS -p <encrypted_token> <repo_uri>
+docker tag imagetest1 615004465267.dkr.ecr.us-east-1.amazonaws.com/mynewrepo
+docker push 615004465267.dkr.ecr.us-east-1.amazonaws.com/mynewrepo
+docker rm  $(docker ps -q -a)
+docker rmi
+
+AWS ECR repo URI: 615004465267.dkr.ecr.us-east-1.amazonaws.com/repo2
+
